@@ -2,6 +2,13 @@ body {
     display: flex;
     height: 100vh;
     overflow: hidden;
+    background-color: lightblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
 }
 
 .container {
@@ -11,6 +18,10 @@ body {
     flex-direction: column;
     width: 50%;
     margin: auto;
+    border: 1px solid lightgray;
+border-radius: 25px;
+padding: 2rem;
+background-color: whitesmoke;
 }
 
 .inner-wrapper {
@@ -20,8 +31,8 @@ body {
     justify-content: center;
 }
 
-.inner-wrapper>img {
-    height: 150px;
+.label {
+    height: 100px;
 }
 
 #toss {
@@ -34,12 +45,29 @@ button {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 5px 10px;
     margin-top: 20px;
-    width: 65%;
+    flex: 1;
 }
 
 small {
     color: gray;
     padding-top: 5px;
+}
+
+.selected {
+    border: 2px solid dodgerblue;
+    border-radius: 999px;
+}
+
+.form-group {
+    width: 100%;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.stats{
+    display: flex;
+    gap: 10px;
 }
