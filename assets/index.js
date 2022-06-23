@@ -47,4 +47,6 @@ reset.addEventListener("click", () => {
   round = null;
   computer = null;
   person = null;
+  flipBtn.removeAttribute("disabled");
+  document.getElementById("round").innerHTML = "";
 });

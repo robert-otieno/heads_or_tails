@@ -16,7 +16,7 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 50%;
+    width: 500px;
     margin: auto;
     border: 1px solid lightgray;
 border-radius: 25px;
