@@ -1,30 +1,50 @@
-let heads = 0;
-let tails = 0;
-let counter = 1;
+let myPick = null;
+let round = null;
+let outcome = null;
 
-document.getElementById("head-tail").onclick = function () {
-  counter === 5 ? (document.getElementById("head-tail").style.display = "none") : counter++;
+document.querySelector("#head-tail").addEventListener("click", () => {
+  round++;
 
-  document.getElementById("toss").style.display = "none"; // hide default coin
+  let coins = ["heads", "tails"]
 
-  const random = Math.round(Math.random() % 2); // if random is 0 then tails else if random is 1 then heads
+  let random = Math.round(Math.random() % 2); // if random is 0 then tails else if random is 1 then heads
+  console.log(`random: ${random}`);
 
-  if (random === 0) {
-    tails += 1;
-    document.getElementById("tails").style.display = "block";
-    document.getElementById("heads").style.display = "none";
-  } else {
-    heads += 1;
-    document.getElementById("heads").style.display = "block";
-    document.getElementById("tails").style.display = "none";
+  let computer = coins[random];
+  console.log(`Computer Choice: ${computer}`);
+  console.log(`My Pick: ${myPick}`);
+
+  document.getElementById("round").innerHTML = ` - Round: ${round}`;
+
+  if (round == 5) {
+    document.getElementById("head-tail").style.display = "none";
+    reset();
   }
 
-  if (heads > tails) {
-    document.getElementById("desc").innerHTML = "😆";
-  } else {
-    document.getElementById("desc").innerHTML = "😞";
+  if (computer === "tails" && myPick === "heads") {
+    outcome = "heads"
+  } else if (computer === "heads" && myPick === "heads") {
+    outcome = "heads"
+  } else if (computer === "tails" && myPick === "tails") {
+    outcome = "tails"
+  } else if (computer === "heads" && myPick === "tails") {
+    outcome = "heads"
   }
 
-  console.log(`heads: ${heads}`);
-  console.log(`tails: ${tails}`);
-};
+  console.log(`Round: ${round}`);
+  console.log(`Outcome: ${outcome}`)
+})
+
+document.querySelector("#heads").addEventListener("click", () => myPick = "heads");
+document.querySelector("#tails").addEventListener("click", () => myPick = "tails");
+
+const reset = () => {
+  const resetBtn = document.createElement("button");
+  const text = document.createTextNode("Reset");
+  resetBtn.appendChild(text);
+
+  const container = document.getElementById("container");
+  const child = document.getElementById("desc");
+  container.insertBefore(resetBtn,child);
+}
+

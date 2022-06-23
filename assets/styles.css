@@ -1,26 +1,45 @@
+body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 50%;
+    margin: auto;
 }
 
 .inner-wrapper {
-    height: 500px;
+    gap: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .inner-wrapper>img {
-    height: 300px;
-    display: none;
+    height: 150px;
 }
 
 #toss {
-    display: block;
+    display: inline;
+    height: 24px;
 }
 
 button {
-    padding: 15px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 65%;
+}
+
+small {
+    color: gray;
+    padding-top: 5px;
 }
