@@ -13,13 +13,21 @@ flipBtn.addEventListener("click", () => {
   computerChoice();
   myChoice();
 
-  myPick === 'heads' ? person++ : null;
-  computerPick === 'heads' ? computer++ : null;
-
-  if (round == 5) {
+  if (round == 1) {
+    computerPick === "tails" && myPick === 'heads' ? person += 1 : computer += 0;
+  } else if (round == 2) {
+    computerPick === "tails" && myPick === 'heads' ? person += 2 : computer += 0;
+  } else if (round == 3) {
+    computerPick === "heads" && myPick === 'heads' ? person += 3 : computer += 1;
+  } else if (round == 4) {
+    computerPick === "tails" && myPick === 'tails' ? person += 3 : computer += 2;
+  } else if (round == 5) {
+    computerPick === "tails" && myPick === 'heads' ? person += 4 : computer += 2;
     disableBtn();
     person >= computer ? alert('You win!') : alert('You lose!');
   }
+
+  console.log(`person: ${person}`); console.log(`computer: ${computer}`);
 });
 
 const computerChoice = () => {
