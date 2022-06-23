@@ -1,19 +1,30 @@
-// computer guessed tails and you guessed heads
-// outcome: heads
-// you get a 1 and computer gets a 0 (zero)
+let heads = 0;
+let tails = 0;
+let counter = 1;
 
-// computer guessed tails and you guessed heads
-// outcome: heads
-// you get a 2 and computer gets a 0 (zero)
+document.getElementById("head-tail").onclick = function () {
+  counter === 5 ? (document.getElementById("head-tail").style.display = "none") : counter++;
 
-// computer guessed heads and you guessed heads
-// outcome: heads
-// you get a 3 and computer gets a 1
+  document.getElementById("toss").style.display = "none"; // hide default coin
 
-// computer guessed tails and you guessed heads
-// outcome: tails
-// you get a 3 and computer gets a 2
+  const random = Math.round(Math.random() % 2); // if random is 0 then tails else if random is 1 then heads
 
-// computer guessed tails and you guessed heads
-// outcome: heads
-// you get a 4 and computer gets a 2
+  if (random === 0) {
+    tails += 1;
+    document.getElementById("tails").style.display = "block";
+    document.getElementById("heads").style.display = "none";
+  } else {
+    heads += 1;
+    document.getElementById("heads").style.display = "block";
+    document.getElementById("tails").style.display = "none";
+  }
+
+  if (heads > tails) {
+    document.getElementById("desc").innerHTML = "😆";
+  } else {
+    document.getElementById("desc").innerHTML = "😞";
+  }
+
+  console.log(`heads: ${heads}`);
+  console.log(`tails: ${tails}`);
+};

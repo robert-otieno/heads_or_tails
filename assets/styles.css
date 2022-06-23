@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inner-wrapper {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-wrapper>img {
+    height: 300px;
+    display: none;
+}
+
+#toss {
+    display: block;
+}
+
+button {
+    padding: 15px 40px;
+}
